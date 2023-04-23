@@ -132,4 +132,59 @@ with columnWithSlider:
     features[16] = st.slider('What is the Unfinished square feet of basement area??', min_value = 0, max_value = 2336) # BsmtUnfSF
 ```
 
+- Area to **display output**:
 
+    - Create a button where to activate the prediction using the model. After the algorithm is done, button is set to ```False``` again so it does not run forever. Which means, we need to make sure the program only runs when the button is clicked.
+    - Create a hashmap of dataframe with key is the feature name and value is the ```features```'s elements.
+    - We preduct the house price with given values through the sliders by using ***model_lgbm.predict*** and assign the value to variable ```y_predict```.
+    - Finally, display the predicted output and the graphs of SHAP values.
+
+```
+with col2:
+    st.text('Name: Truong Dang')
+    st.text('Email: tdd4@njit.edu')
+    st.text('Course: CS 301-102')
+    st.text('NJIT ID: 31558941')
+    
+    button = st.button('Range of house price') # button created
+    if (button): # if button is clicked, value is True
+        data_df = {'MSSubClass': [features[0]],
+                'LotFrontage': [features[1]],
+                'LotArea': [features[2]],
+                'OverallQual': [features[3]], 
+                'YearBuilt': [features[4]],
+                'BedroomAbvGr': [features[5]],
+                'FullBath': [features[6]],
+                'TotalBsmtSF': [features[7]],
+                'GarageArea': [features[8]],
+                'OverallCond': [features[9]],
+                '1stFlrSF': [OneFlrSF],
+                '2ndFlrSF': [TwoFlrSF],
+                'GrLivArea': [features[12]],
+                'Fireplaces': [features[13]],
+                'YrSold': [features[14]],
+                'YearRemodAdd': [features[15]],
+                'BsmtUnfSF': [features[16]]
+            }
+        
+        data_df = pd.DataFrame.from_dict(data_df)
+        y_predict = model_lgbm.predict(data_df, predict_disable_shape_check=True)
+        st.write("Predicted price: ", y_predict[0]) # Display the prediction
+        # SHAP Beeswarm
+        explainer = shap.TreeExplainer(model_lgbm, X_train)
+        shap_values = explainer.shap_values(X_test)
+        shap.initjs()
+        shap.summary_plot(shap_values, X_test, plot_type="dot")
+        plt.savefig('beeswarm.png', bbox_inches='tight')
+        plt.close()
+        st.image("beeswarm.png")
+        # SHAP interaction
+        shap.initjs()
+        shap_interaction_values = shap.TreeExplainer(model_lgbm).shap_interaction_values(X.iloc[:,:])
+        shap.summary_plot(shap_interaction_values, X.iloc[:,:])
+        plt.savefig('interact.png', bbox_inches='tight')
+        plt.close()
+        st.image("interact.png")
+
+        button = False 
+```
