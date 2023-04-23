@@ -1,5 +1,7 @@
 # Interpretable Gradient Boosting - Real Estate House Price Prediction (Milestone 4) --- Code Explanation
 
+Link to the Google Site: [link](https://sites.google.com/njit.edu/2dt-house-price-prediction/home?authuser=1)
+
 ## Required Packages
 
 Before implementing the algorithm into the webpage on HuggingFace, we **create ```requirements.txt```**. This file contains all the libraries and frameworks needed for the project.
