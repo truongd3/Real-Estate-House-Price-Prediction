@@ -2,6 +2,10 @@
 
 Link to the Google Site: [link](https://sites.google.com/njit.edu/2dt-house-price-prediction/home?authuser=1)
 
+Below is the video instruction
+
+[![Watch the video](https://img.youtube.com/vi/kqs3AWT9IWE/maxresdefault.jpg)](https://youtu.be/kqs3AWT9IWE)
+
 ## Required Packages
 
 Before implementing the algorithm into the webpage on HuggingFace, we **create ```requirements.txt```**. This file contains all the libraries and frameworks needed for the project.
