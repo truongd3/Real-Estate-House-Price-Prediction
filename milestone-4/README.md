@@ -1,9 +1,4 @@
-# Interpretable Gradient Boosting - Real Estate House Price Prediction (Milestone 4)
-
-#### Name: Truong Dang
-#### Email: tdd4@njit.edu
-#### Course: CS 301-102
-#### NJIT ID: 31558941
+# Interpretable Gradient Boosting - Real Estate House Price Prediction (Milestone 4) --- Code Explanation
 
 ## Required Packages
 
