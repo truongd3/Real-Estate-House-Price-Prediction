@@ -1,11 +1,6 @@
 # Interpretable Gradient Boosting - Real Estate House Price Prediction (Milestone 3)
 
-#### Name: Truong Dang
-#### Email: tdd4@njit.edu
-#### Course: CS 301-102
-#### NJIT ID: 31558941
-
-Link to Hugging Face app: [link](https://huggingface.co/spaces/2dtkingslayer/MyStreamlitApp)
+Link to **Hugging Face** app: [here](https://huggingface.co/spaces/2dtkingslayer/MyStreamlitApp)
 
 - When we first load the site, it takes time setting up the cache so please be patient (this process can takes up to 15 minutes).
 
